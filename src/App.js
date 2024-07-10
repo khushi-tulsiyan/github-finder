@@ -1,7 +1,8 @@
 import React, { useState} from 'react';
 import axios from 'axios';
-import Search from './componenets/search';
-import User from './componenets/user';
+import Search from './components/search';
+import User from './components/user';
+import { Container, Typography } from '@mui/material';
 import './App.css';
 
 function App() {
@@ -17,10 +18,13 @@ function App() {
     }
   };
   return (
-    <div>
+    <Container sx={{textAlign:"center", padding: 3}}>
+      <Typography variant="h4" component="h1" gutterBottom>
+        Github Finder
+      </Typography>
       <Search searchUsers={searchUsers} />
-      <User user = {user} />
-    </div>
+      <User user={user} />
+    </Container>
   );
 };
 

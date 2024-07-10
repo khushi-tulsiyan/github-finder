@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import {TextField, Button,Box} from '@mui/material';
 
 const Search = ({ searchUsers}) => {
     const[query, setQuery] = useState('');
@@ -10,17 +11,19 @@ const Search = ({ searchUsers}) => {
     };
 
     return (
-        <div>
-            <form onSubmit ={onSubmit}>
-                <input 
-                type = "text"
-                value = {Query}
-                onChange ={(e) => setQuery(e.target.value)}
-                placeholder = "Search github Users..."
-                />
-            </form>
-
-        </div> 
+        <Box component="from" onSubmit={onSubmit} sx = {{display: 'flex', justifyContent: 'center', marginButton: 2}}>
+            <TextField 
+            label="Search Github Users"
+            variant = "outlined"
+            value ={query}
+            onChange={(e) => setQuery(e.target.value)}
+            sx={{ marginRight: 1}}
+            />
+            <Button type="submit" variant="contained" color="primary">
+                Search
+            </Button>
+        </Box>
+        
     );
 };
 
