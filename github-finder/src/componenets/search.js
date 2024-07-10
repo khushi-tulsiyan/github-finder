@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-const Search = {( searchUsers )} => {
+const Search = ({ searchUsers}) => {
     const[query, setQuery] = useState('');
 
     const onSubmit = (e) => {
